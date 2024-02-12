@@ -6,7 +6,7 @@ const baseURL = "https://mwks-joke-service.azurewebsites.net/api/joke/random"
 type Joke = {
   id: number,
   joke: string,
-  punchline: string,
+  punchLine: string,
 }
 
 const fetchJoke= () => {
