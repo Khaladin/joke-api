@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import { CircularProgress, Stack, Typography } from "@mui/material";
+import { Box, CircularProgress, Stack, Typography } from "@mui/material";
 
 import { useJoke } from "../hooks/hooks";
 import { StyledButton } from "./Button";
@@ -20,7 +20,9 @@ const Joke = () => {
   if (!data) return <Typography color="error">THERE WAS AN ERROR LOADING YOUR JOKE.</Typography>
 
   return <Stack>
-    <Typography textAlign={"start"}>{data.joke}</Typography>
+    <Box m={8}>
+      <Typography fontSize={24} textAlign={"start"}>{data.joke}</Typography>
+    </Box>
     <StyledButton
       color="primary"
       onClick={() => setShowPunchLine(!showPunchLine)}
@@ -30,7 +32,9 @@ const Joke = () => {
       {!showPunchLine ? "Show Punchline" : "Hide Punchline"}
     </StyledButton>
     {showPunchLine &&
-      <Typography textAlign={"end"}>{data.punchLine}</Typography>
+      <Box m={8}>
+        <Typography fontSize={24} textAlign={"end"}>{data.punchLine}</Typography>
+      </Box>
     }
   </Stack>
 }

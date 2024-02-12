@@ -5,7 +5,7 @@ import { useJoke } from "../hooks/hooks";
 const Header = () => {
   const {refetch, isFetching} = useJoke();
 
-  return <Stack direction="row" justifyContent="space-between" >
+  return <Stack direction="row" justifyContent="space-between" spacing={20} mt={10} mb={6}>
     <StyledButton
       color="success"
       onClick={() => refetch()}
@@ -18,6 +18,7 @@ const Header = () => {
       href="https://mwks-joke-service.azurewebsites.net/swagger/index.html"
       rel="noreferrer"
       target="_blank"
+      alignSelf="center"
     >
       View API Docs
     </Link>
